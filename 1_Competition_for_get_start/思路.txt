@@ -6,14 +6,19 @@
 
 	将tianchi_fresh_comp_train_user.csv导入到Mysql数据库然后查询(方法参考：import_csv_to_mysql.png)。
 	查询结果可通过sql可视化工具 Navicat 保存到csv文件即可。
+解决办法2：
+   不借助mysql，直接上pandas操作几千万数据毫无压力
+   参数：jianshu.py
+
+
 
 Q&A:
 
-## 如何将查询结果导出到csv文件：
+Q1 : 如何将查询结果导出到csv文件：
 
-方法1：
+方法1(注意\\转义字符)：
 mysql> select * from csv into outfile 'E:\\mysql_output_file_path\\company.csv'  fields terminated by ',' optionally enclosed by '"' lines terminated by '\r\n';
-Query OK, 4 rows affected (0.13 sec)
+Query OK, 4 rows affected (0.13 sec)  
 
 mysql> select * from csv into outfile 'E:\\mysql_output_file_path\\compan1.csv'  fields terminated by ','                            lines terminated by '\r\n';
 Query OK, 4 rows affected (0.02 sec)
@@ -21,9 +26,8 @@ Query OK, 4 rows affected (0.02 sec)
 方法2（推荐）：
 直接用sql可视化工具 Navicat 
 
+Q2: tianchi_fresh_comp_train_item.csv 这里面商品映射分类并不全(tianchi_fresh_comp_train_user.csv很多商品在item.csv里面找不到)，好像这个文件并没有什么用。
+竞赛题目中的描述"那么我们的目标是利用D来构造U中用户对P中商品的推荐模型"可不用太在意
 
 
 
-解决办法2：
-   不借助mysql，直接上pandas操作几千万数据毫无压力
-   参数：jianshu.py
