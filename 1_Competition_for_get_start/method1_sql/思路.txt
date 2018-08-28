@@ -1,0 +1,29 @@
+﻿思路：
+	简单粗暴, 在tianchi_fresh_comp_train_user.csv直接取2014-12-18号的记录加入购物车的记录作为2014-12-19的购买预测。
+遇到的问题：
+	记录有2千万条,excel或者sublime都无法完全打开，怎么筛选出2014-12-18号的记录
+解决办法1：
+
+	将tianchi_fresh_comp_train_user.csv导入到Mysql数据库然后查询(方法参考：import_csv_to_mysql.png)。
+	查询结果可通过sql可视化工具 Navicat 保存到csv文件即可。
+
+Q&A:
+
+## 如何将查询结果导出到csv文件：
+
+方法1：
+mysql> select * from csv into outfile 'E:\\mysql_output_file_path\\company.csv'  fields terminated by ',' optionally enclosed by '"' lines terminated by '\r\n';
+Query OK, 4 rows affected (0.13 sec)
+
+mysql> select * from csv into outfile 'E:\\mysql_output_file_path\\compan1.csv'  fields terminated by ','                            lines terminated by '\r\n';
+Query OK, 4 rows affected (0.02 sec)
+
+方法2（推荐）：
+直接用sql可视化工具 Navicat 
+
+
+
+
+解决办法2：
+   不借助mysql，直接上pandas操作几千万数据毫无压力
+   参数：jianshu.py
