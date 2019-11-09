@@ -1,1 +1,3 @@
-´ËÎÄ¼ş¼Ğ½éÉÜÁËÈçºÎÓÃpandansµ¼Èëcsvµ½mysql£¬¶ÔÓÚ2Ç§ÍòÊı¾İÄÚ´æ»á±¬£¬±¾ÌâÃ»ÓĞ²ÉÓÃ
+æ­¤æ–‡ä»¶å¤¹ä»‹ç»äº†å¦‚ä½•ç”¨pandanså¯¼å…¥csvåˆ°mysqlï¼Œå¯¹äº2åƒä¸‡æ•°æ®å†…å­˜ä¼šçˆ†ï¼Œæœ¬é¢˜æ²¡æœ‰é‡‡ç”¨
+bg added 20191109 å³ä½¿ç”¨äº†chunksizeä¹Ÿä¼šå†…å­˜çˆ†æ‰
+    df.to_sql('tianchi1_train_user', conn, if_exists='append', index=False,chunksize=2000)
