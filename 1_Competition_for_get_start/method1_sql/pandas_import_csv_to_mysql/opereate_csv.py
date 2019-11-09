@@ -21,6 +21,8 @@ df = pd.read_csv('test.csv', header = 0)
 print(df)
 
 
-engine = create_engine('mysql://root:password@localhost/test')
+# 需要提前在mysql中创建tianchi数据库
+engine = create_engine('mysql://root:password@localhost/tianchi')
+# tbl_test不需要提前创建
 with engine.connect() as conn, conn.begin():
-    df.to_sql('csv', conn, if_exists='append', index=False)
+    df.to_sql('tbl_test', conn, if_exists='append', index=False)
