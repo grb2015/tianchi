@@ -10,3 +10,4 @@ Practice of data  ming in  tianchi and kaggle
 # Dataframes implement the Pandas API
 import dask.dataframe as dd
 df = dd.read_csv('s3://.../2018-*-*.csv')
+Ref : https://stackoverflow.com/questions/25962114/how-to-read-a-6-gb-csv-file-with-pandas
